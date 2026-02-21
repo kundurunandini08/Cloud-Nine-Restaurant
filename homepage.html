@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            font-family:'Poppins', sans-serif;
+        }
+        .hero{
+            height:100vh;
+            background: url("restaurant.jpg") center/cover no-repeat;
+            position:relative;
+            color:white;
+        }
+        .hero::before{
+            content:"";
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+        }
+        nav{
+            position:absolute;
+            width:100%;
+            padding:20px 60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            z-index:2;
+        }
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+        }
+        .logo h1 {
+            font-size: 30px;
+            font-weight: bold;
+            background: linear-gradient(45deg, gold, white);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+        }
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:30px;
+        }
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-size:14px;
+            letter-spacing:1px;
+            transition:0.3s;
+        }
+        nav ul li a:hover{
+            color:orange;
+        }
+        .social{
+            display:flex;
+            gap:15px;
+        }
+        .social a{
+            color:white;
+            text-decoration:none;
+            font-size:14px;
+        }
+        .hero-content{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            text-align:center;
+            z-index:2;
+            width:80%;
+        }
+        .hero-content h3{
+            font-family:'Playfair Display', serif;
+            font-style:italic;
+            margin-bottom:15px;
+            font-weight:400;
+        }
+        .hero-content h1{
+            font-family:'Playfair Display', serif;
+            font-size:70px;
+            letter-spacing:4px;
+            margin-bottom:20px;
+        }
+        .hero-content p{
+            max-width:700px;
+            margin:auto;
+            line-height:1.6;
+            font-size:14px;
+            opacity:0.9;
+        }
+        .scroll-down{
+            position:absolute;
+            bottom:20px;
+            left:50%;
+            transform:translateX(-50%);
+            font-size:22px;
+            z-index:2;
+        }
+        @media(max-width:768px){
+        nav{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            padding:20px 60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:rgba(0,0,0,0.85);
+            backdrop-filter:blur(5px);
+            z-index:1000;
+        }
+            .hero-content h1{
+                font-size:40px;
+            }
+            nav ul{
+                display:none;
+                flex-direction:column;
+                background:#000;
+                width:100%;
+                text-align: center;
+                padding:20px 0;
+            }
+            nav ul.active{
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+                color:white;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+
+            .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+}
+.menu-toggle span{
+    width:30px;
+    height:3px;
+    background:white;
+    border-radius:2px;
+    transition:0.3s;
+}
+        }
+        .section{
+    min-height:100vh;
+    padding:120px 10%;
+    text-align:center;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+.section::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+    z-index:0;
+}
+.section > *{
+    position:relative;
+    z-index:2;
+}
+        .section h2{
+            font-family:'Playfair Display', serif;
+            font-size:40px;
+            margin-bottom:40px;
+        }
+
+        .dark{
+            background:#111;
+            color:white;
+        }
+
+        .light{
+            background:#f4f4f4;
+            color:#111;
+        }
+
+        .card-container{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:#222;
+            backdrop-filter:blur(5px);
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+        width:100%;
+        height:200px;
+        object-fit:cover;
+        border-radius:10px;
+        }
+
+        .card span{
+            color:orange;
+            font-weight:bold;
+        }
+
+        .events-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.event{
+    background:rgba(255,255,255,0.95);
+    color:black;
+    width:300px;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.event img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.event h3{
+    margin:15px 0 10px;
+}
+
+.event p{
+    padding:0 15px 20px;
+    font-size:14px;
+}
+
+.event:hover{
+    transform:translateY(-10px);
+}
+
+        .gallery{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.gallery-item{
+    text-align:center;
+    transition:0.4s;
+}
+
+.gallery-item img{
+    width:300px;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.gallery-item:hover{
+    transform:translateY(-10px);
+}
+.gallery-item h3{
+    margin-top:10px;
+    font-size:18px;
+    color:white;
+}
+.gallery::-webkit-scrollbar{
+    height:6px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:orange;
+    border-radius:10px;
+}
+.booking-form input, .booking-form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+.booking-form button{
+    width:100px;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:orange;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}   
+.booking-form button:hover{
+    background:black;
+}
+
+        
+.bg-specials{
+    background:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836") center/cover no-repeat;
+}
+
+.bg-events{
+    background:url("https://images.unsplash.com/photo-1515169067868-5387ec356754") center/cover no-repeat;
+}
+
+.bg-gallery{
+    background:url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9") center/cover no-repeat;
+}
+
+.bg-visit{
+    background:url("https://images.unsplash.com/photo-1528605248644-14dd04022da1") center/cover no-repeat;
+}
+.back-home{
+    margin-top:40px;
+    display:inline-block;
+    padding:12px 30px;
+    background:linear-gradient(45deg,orange,gold);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:0.3s;
+    align-self:flex-end;
+}
+
+.back-home:hover{
+    background:white;
+    color:black;
+    transform:translateY(-5px);
+}
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <nav>
+            <div class="logo">
+                <h1>Cloud-Nine</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-links">
+                <li><a href="restaurant.html">OUR MENU</a></li>
+                <li><a href="#specials">SPECIALS</a></li>
+                <li><a href="#events">EVENTS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#visit">VISIT US</a></li>
+                <li><a href="#bookings">BOOKINGS</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h3>Welcome to our restaurant</h3>
+            <h1>Cloud-Nine</h1>
+            <p>
+                Experience the ultimate dining pleasure at Cloud-Nine. Cloud-Nine promises an unforgettable culinary journey that will leave you coming back for more.
+            </p>
+        </div>
+
+        <div class="scroll-down">⬇</div>
+    </section>
+
+    <section id="specials" class="section bg-specials">
+        <h2>Specials</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/hot_chocolate_78843_16x9.jpg">
+                <h3>Hot Chocolate</h3>
+                <p>Rich and creamy hot chocolate served with whipped cream and marshmallows.</p>
+            </div>
+            <div class="card">
+                <img src="https://www.paleorunningmomma.com/wp-content/uploads/2022/06/chicken-skewers-2-scaled.jpg">
+                <h3>Grilled Veg and non Veg</h3>
+                <p>Grilled vegetables and non-vegetarian options served with a variety of sauces and sides.</p>
+            </div>
+            <div class="card">
+                <img src="https://frobishers.com/cdn/shop/articles/1_277e9d30-bede-4b80-8c2d-d4abef8305b3.png?v=1680083939.jpg">
+                <h3>Mocktails</h3>
+                <p>Refreshing mocktails with a variety of flavors and ingredients.</p>
+            </div>
+        </div>
+        <a href="homepage.html" class="back-home">← Back to Home</a>
+    </section>
+    
+    <section id="events" class="section bg-events">
+        <h2>Events</h2>
+        <div class="events-container">
+            <div class="event">
+                <img src="https://menagerierestaurant.co.uk/wp-content/uploads/2022/10/IMG_6022.jpeg">
+                <h3>Birthday Celebrations</h3>
+                <p>Celebrate your special day with a personalized birthday menu and special decorations.</p>
+            </div>
+            <div class="event">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmZJlaHWZYy8Tb89-aHi8DQ40VTCzXLIviA&s.jpg">
+                <h3>Live Music Nights</h3>
+                <p>Enjoy live music performances while dining on our delicious menu.</p>
+            </div>
+            <div class="event">
+                <img src="https://images.venuebookingz.com/34133-1708432439-wm-the_living_room-1.jpg">
+                <h3>Surprise Parties</h3>
+                <p>Host a surprise party for your loved ones with our customizable event packages.</p>
+            </div>
+        </div>
+        <a href="homepage.html" class="back-home">← Back to Home</a>
+
+    </section>
+    
+
+    <section id="gallery" class="section bg-gallery">
+    <h2>Our Gallery</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/b/indian-non-veg-platter-served-restaurant-table-grilled-mutton-rice-puri-spicy-masala-fry-food-steamed-butter-chicken-202055454.jpg">
+            <h3>Veg Platter</h3>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://thumbs.dreamstime.com/b/north-indian-party-meal-punjabi-non-vegetarian-thali-indian-thaali-meal-butter-chicken-rajma-masala-chicken-biryani-tandoori-112712610.jpg">
+            <h3>Non-Veg Platter</h3>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Desserts.jpg">
+            <h3>Desserts</h3>
+        </div>
+
+    </div>0
+
+    <a href="homepage.html" class="back-home">← Back to Top</a>
+</section>
+
+    
+    <section id="visit" class="section bg-visit">
+        <h2>Visit Us</h2>
+        <p>Food Street,Nallacheruvu,Guntur</p>
+        <p>Open Daily: 10AM - 11PM</p>
+
+        <iframe
+            width="600"
+            height="450"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            src="https://maps.google.com/maps?q=16.284865,80.441738&hl=en&z=15&output=embed">
+        </iframe>
+        <a href="homepage.html" class="back-home">← Back to Home</a>
+
+    </section>
+<section id="bookings" class="section bg-events">
+    <h2>Book a Table</h2>
+
+    <div class="booking-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="date" required>
+        <input type="time" required>
+        <textarea rows="3" placeholder="Special Requests"></textarea>
+        <button onclick="bookNow()">Confirm Booking</button>
+    </div>
+
+    <a href="homepage.html" class="back-home">← Back to Top</a>
+</section>
+<script>
+
+// Mobile Menu Toggle
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Scroll Reveal Animation
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < window.innerHeight - 100){
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+        }
+    });
+});
+
+// Initial animation state
+sections.forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "1s ease";
+});
+
+// Booking Confirmation
+function bookNow(){
+    alert("🎉 Your table has been successfully booked at Cloud-Nine!");
+}
+
+</script>
+
+
+
+</body>
+</html>

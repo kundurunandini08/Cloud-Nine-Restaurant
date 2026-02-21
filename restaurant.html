@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud-Nine Restaurant</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("restaurant.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.3);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .top {
+            color: black;
+            text-shadow: rgb(255, 255, 255) 4px 2px 4px;
+            text-align: center;
+        }
+
+        .pot {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255, 221, 0, 0.596);
+        }
+
+        .categories {
+            list-style: none;
+            padding: 0;
+        }
+
+        .categories li {
+            margin: 8px 0;
+        }
+
+        .categories a {
+            background-color: rgb(211, 112, 85);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .categories a:hover {
+            background-color: rgb(57, 100, 0);
+        }
+
+
+        .menu {
+            max-width: 700px;
+            margin: auto;
+            display: flex; 
+            flex-direction: column;   
+            align-items: center;      
+            gap: 20px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;             
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .item img {
+            width: 150px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .details h4 {
+            margin: 5px 0;
+        }
+
+        .details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .order-btn {
+            background-color: darkorange;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .order-btn:hover {
+            background-color: darkred;
+        }
+
+        a.back {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .buu {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="overlay">
+
+    <div class="top" id="top">
+        <h1>Cloud-Nine Restaurant</h1>
+
+    </div>
+        <div class="pot" id="pot">
+        <h2>Categories</h2>
+
+        <ul class="categories">
+            <li><a href="#veg">Vegetarian</a></li><br>
+            <li><a href="#nonveg">Non-Vegetarian</a></li><br>
+            <li><a href="#desserts">Desserts</a></li><br>
+            <li><a href="#fastfoods">Fast Foods</a></li><br>
+            <li><a href="#softdrinks">Soft Drinks</a></li>
+        </ul>
+    </div>
+    <hr>
+
+    <!-- Vegetarian -->
+    <h2 id="veg">Vegetarian Items</h2>
+    <div class="menu">
+
+        <div class="item">
+            <img src="paneer.jpg">
+            <div class="details">
+                <h4>Paneer Butter Masala</h4>
+                <p>Soft paneer cubes cooked in rich creamy tomato gravy.</p>
+                <p class="price">₹180</p>
+                <button class="order-btn"><a href="v1.html" class="buu">Order Now</a></button>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="veg_biryani.jpg">
+            <div class="details">
+                <h4>Veg Biryani</h4>
+                <p>Fragrant basmati rice cooked with fresh vegetables and spices.</p>
+                <p class="price">₹150</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="mushroom.jpg">
+            <div class="details">
+                <h4>Mushroom Masala</h4>
+                <p>Delicious mushrooms cooked in a rich, aromatic sauce.</p>
+                <p class="price">₹200</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="chole.jpg">
+            <div class="details">
+                <h4>Chole Bhature</h4>
+                <p>Spicy chickpea curry served with deep-fried bread.</p>
+                <p class="price">₹130</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="veg_platter.jpg">
+            <div class="details">
+                <h4>Veg Platter</h4>
+                <p>A variety of mixed vegetable dishes served together.</p>
+                <p class="price">₹140</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    <a class="back" href="#top">Back to top</a>
+
+    <hr>
+
+    <!-- Non-Vegetarian -->
+    <h2 id="nonveg">Non-Vegetarian Items</h2>
+    <div class="menu">
+
+        <div class="item">
+            <img src="chicken_curry.jpg">
+            <div class="details">
+                <h4>Chicken Curry</h4>
+                <p>Traditional spicy chicken curry cooked with Indian spices.</p>
+                <p class="price">₹220</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="mutton_biryani.jpg">
+            <div class="details">
+                <h4>Mutton Biryani</h4>
+                <p>Slow-cooked mutton layered with aromatic basmati rice.</p>
+                <p class="price">₹280</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="fish_fry.jpg">
+            <div class="details">
+                <h4>Fried Fish</h4>
+                <p>Crispy fried fish marinated with spices and herbs.</p>
+                <p class="price">₹250</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="prawn_masala.jpg">
+            <div class="details">
+                <h4>Prawn Masala</h4>
+                <p>Succulent prawns cooked in a spicy masala gravy.</p>
+                <p class="price">₹300</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="egg_curry.jpg">
+            <div class="details">
+                <h4>Egg Curry</h4>
+                <p>Boiled eggs simmered in a flavorful curry sauce.</p>
+                <p class="price">₹160</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    <a class="back" href="#top">Back to top</a>
+
+    <hr>
+
+    <!-- Desserts -->
+    <h2 id="desserts">Desserts</h2>
+    <div class="menu">
+
+        <div class="item">
+            <img src="ice_cream.jpg">
+            <div class="details">
+                <h4>Ice Cream</h4>
+                <p>Chilled creamy dessert available in multiple flavors.</p>
+                <p class="price">₹90</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="gulab_jamun.jpg">
+            <div class="details">
+                <h4>Gulab Jamun</h4>
+                <p>Soft milk-solid balls soaked in sugar syrup.</p>
+                <p class="price">₹80</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="rasgulla.jpg">
+            <div class="details">
+                <h4>Rasgulla</h4>
+                <p>Spongy cottage cheese balls in light sugar syrup.</p>
+                <p class="price">₹85</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="brownie.jpg">
+            <div class="details">
+                <h4>Chocolate Brownie</h4>
+                <p>Rich and fudgy chocolate dessert.</p>
+                <p class="price">₹120</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="fruit_salad.jpg">
+            <div class="details">
+                <h4>Fruit Salad</h4>
+                <p>Fresh mixed fruits served with a sweet dressing.</p>
+                <p class="price">₹100</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    <a class="back" href="#top">Back to top</a>
+        <hr>
+        <h2 id="fastfoods">Fast Foods</h2>
+        <div class="menu">
+
+            <div class="item">
+                <img src="burger.jpg">
+                <div class="details">
+                    <h4>Burger</h4>
+                    <p>Delicious vegetable patty with fresh veggies in a bun.</p>
+                    <p class="price">₹120</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="pizza.jpg">
+                <div class="details">
+                    <h4>Pizza</h4>
+                    <p>Cheesy pizza topped with fresh vegetables and herbs.</p>
+                    <p class="price">₹250</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="fries.jpg">
+                <div class="details">
+                    <h4>French Fries</h4>
+                    <p>Crispy golden potato fries served with ketchup.</p>
+                    <p class="price">₹90</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="sandwich.jpg">
+                <div class="details">
+                    <h4>Sandwich</h4>
+                    <p>Fresh vegetable sandwich with a variety of fillings.</p>
+                    <p class="price">₹110</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="panipuri.jpg">
+                <div class="details">
+                    <h4>Pani Puri</h4>
+                    <p>Crispy puris filled with spicy flavored water and fillings.</p>
+                    <p class="price">₹70</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+    </div>
+    <a class="back" href="#top">Back to top</a>
+    <hr>
+    <!-- Soft Drinks -->
+    <h2 id="softdrinks">Soft Drinks</h2>
+    <div class="menu">
+
+            
+        <div class="item">
+            <img src="cola.jpg">
+            <div class="details">
+                <h4>Cola</h4>
+                <p>Chilled carbonated cola drink.</p>
+                <p class="price">₹50</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="lemonade.jpg">
+            <div class="details">
+                <h4>Lemonade</h4>
+                <p>Refreshing lemon drink with a hint of mint.</p>
+                <p class="price">₹40</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="orange_juice.jpg">
+            <div class="details">
+                <h4>Orange Juice</h4>
+                <p>Freshly squeezed orange juice.</p>
+                <p class="price">₹60</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="iced_tea.jpg">
+            <div class="details">
+                <h4>Iced Tea</h4>
+                <p>Chilled tea served with ice and lemon.</p>
+                <p class="price">₹55</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="milkshake.jpg">
+            <div class="details">
+                <h4>Milkshake</h4>
+                <p>Creamy milkshake available in chocolate, vanilla, and strawberry flavors.</p>
+                <p class="price">₹70</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    <a class="back" href="#top">Back to top</a>
+</div>
+</body>
+</html>
